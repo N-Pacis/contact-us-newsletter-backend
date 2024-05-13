@@ -1,0 +1,19 @@
+import { Schema, model } from "mongoose"
+
+const contactSchema = new Schema({
+    names:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true,
+    },
+    message:{
+        type:String,
+        required:true
+    }
+})
+
+
+export const Contact = model('contact_us',contactSchema)

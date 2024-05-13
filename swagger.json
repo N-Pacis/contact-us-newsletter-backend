@@ -1,0 +1,111 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Contact Us - Newsletter Backend",
+        "version": "1.0.0"
+    },
+    "tags": [
+        {
+            "name": "NEWSLETTER OPERATIONS",
+            "description": "Operations on newsletters"
+        },
+        {
+            "name": "CONTACT US OPERATIONS",
+            "description": "Operations on contact us"
+        }
+    ],
+    "paths": {
+        "/contact-us/create": {
+            "post": {
+                "tags": [
+                    "CONTACT US OPERATIONS"
+                ],
+                "summary": "Create a contact us message",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "type": "object",
+                        "consumes": "application/json",
+                        "properties": {
+                            "names": {
+                                "type": "string",
+                                "required": "true"
+                            },
+                            "email": {
+                                "type": "string",
+                                "required": "true"
+                            },
+                            "message": {
+                                "type": "string",
+                                "required": "true"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/newsletter/create": {
+            "post": {
+                "tags": [
+                    "NEWSLETTER OPERATIONS"
+                ],
+                "summary": "Create a newsletter user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "type": "object",
+                        "consumes": "application/json",
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "required": "true"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    }
+}
